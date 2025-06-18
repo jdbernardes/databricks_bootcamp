@@ -42,15 +42,3 @@ transactions_df.display()
 # COMMAND ----------
 
 transactions_df.write.mode("overwrite").saveAsTable(databricks_table)
-
-# COMMAND ----------
-
-!pip install python-dotenv
-
-# COMMAND ----------
-
-
-
-# COMMAND ----------
-
-
