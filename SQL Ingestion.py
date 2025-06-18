@@ -1,5 +1,15 @@
 # Databricks notebook source
+from dotenv import load_dotenv
 import os
+
+# Load environment variables from .env file
+load_dotenv()
+
+# Access the environment variable
+my_variable = os.getenv('TEST')
+user = os.environ['DB_USER'],
+password = os.environ['DB_PASSWORD'],
+driver = os.environ['DB_DRIVER']
 
 # COMMAND ----------
 
@@ -32,6 +42,14 @@ transactions_df.display()
 # COMMAND ----------
 
 transactions_df.write.mode("overwrite").saveAsTable(databricks_table)
+
+# COMMAND ----------
+
+!pip install python-dotenv
+
+# COMMAND ----------
+
+
 
 # COMMAND ----------
 
