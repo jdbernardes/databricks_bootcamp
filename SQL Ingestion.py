@@ -16,7 +16,7 @@ driver = os.environ['DB_DRIVER']
 postgresql_table = "transactions"
 
 ##Table on Databricks
-databricks_table = "bronze_transactions"
+databricks_table = "bronze.transactions"
 
 transactions_df = (
   spark.read.format("jdbc")

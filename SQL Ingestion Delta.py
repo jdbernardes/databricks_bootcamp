@@ -18,7 +18,7 @@ driver = os.environ['DB_DRIVER']
 
 # Nome da tabela no PostgreSQL e no Databricks
 postgres_table = "transactions"
-databricks_table = "bronze_transactions"
+databricks_table = "bronze.transactions"
 
 # 1. Obter o último `transaction_time` da tabela gerenciada no Databricks
 last_transaction_time = spark.sql(f"""
