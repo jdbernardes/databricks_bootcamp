@@ -18,8 +18,8 @@ load_dotenv()
 fake = Faker()
 
 # Configurações de Data
-start_date = datetime(2025, 1, 29)
-end_date = datetime(2025, 1, 31)
+start_date = datetime(2025, 2, 1)
+end_date = datetime(2025, 2, 10)
 transactions_per_day = 100  # Transações por dia
 peak_hours_start = 18  # 6 PM
 peak_hours_end = 21  # 9 PM

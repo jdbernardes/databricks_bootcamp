@@ -1,21 +1,4 @@
 # Databricks notebook source
-# !pip install python-dotenv
-
-# COMMAND ----------
-
-from dotenv import load_dotenv
-import os
-
-# Load environment variables from .env file
-load_dotenv()
-
-# Access the environment variable
-user = os.environ['DB_USER'],
-password = os.environ['DB_PASSWORD'],
-driver = os.environ['DB_DRIVER']
-
-# COMMAND ----------
-
 # Nome da tabela no PostgreSQL e no Databricks
 postgres_table = "transactions"
 databricks_table = "bronze.transactions"
@@ -41,11 +24,11 @@ else:
 # 2. Carregar apenas os dados novos do PostgreSQL para um DataFrame Spark
 new_transactions_df = (
   spark.read.format("jdbc")
-  .option("url", os.environ['JDBC_URL'])
+  .option("url", dbutils.secrets.get(scope="databricks_bootcamp", key="JDBC_URL"))
   .option("dbtable", query)
-  .option("user", os.environ['DB_USER'])
-  .option("password", os.environ['DB_PASSWORD'])
-  .option("driver", os.environ['DB_DRIVER'])
+  .option("user", dbutils.secrets.get(scope="databricks_bootcamp", key="DB_USER"))
+  .option("password", dbutils.secrets.get(scope="databricks_bootcamp", key="DB_PASSWORD"))
+  .option("driver", dbutils.secrets.get(scope="databricks_bootcamp", key="DB_DRIVER"))
   .load()
 )
 
@@ -59,7 +42,3 @@ if new_transactions_df.count() > 0:
     print("Novos dados inseridos com sucesso!")
 else:
     print("Nenhum dado novo encontrado para inserção.")
-
-# COMMAND ----------
-
-
