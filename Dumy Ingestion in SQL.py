@@ -18,8 +18,8 @@ load_dotenv()
 fake = Faker()
 
 # Configurações de Data
-start_date = datetime(2025, 2, 1)
-end_date = datetime(2025, 2, 10)
+start_date = datetime(2025, 2, 11)
+end_date = datetime(2025, 2, 15)
 transactions_per_day = 100  # Transações por dia
 peak_hours_start = 18  # 6 PM
 peak_hours_end = 21  # 9 PM
@@ -125,7 +125,3 @@ if __name__ == "__main__":
 
     # Insert transactions into PostgreSQL
     insert_into_postgres_batch(transactions, transactions_table, db_config)
-
-# COMMAND ----------
-
-
