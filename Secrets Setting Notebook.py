@@ -73,7 +73,8 @@ secrets = {
     "DB_PASSWORD": os.environ['DB_PASSWORD'],
     "DB_DRIVER": os.environ['DB_DRIVER'],
     "JDBC_URL": os.environ['JDBC_URL'],
-    "API_URL": os.environ['API_URL']
+    "API_URL": os.environ['API_URL'],
+    "PUBLIC_S3": os.environ['PUBLIC_S3']
 }
 
 # Add each secret to the scope

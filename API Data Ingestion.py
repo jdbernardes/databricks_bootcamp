@@ -50,7 +50,3 @@ if __name__ == "__main__":
 
 # MAGIC %sql
 # MAGIC select * from bronze.bitcoin_price
-
-# COMMAND ----------
-
-
