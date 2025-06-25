@@ -53,6 +53,7 @@
 # COMMAND ----------
 
 # MAGIC %sql
+# MAGIC DROP VIEW IF EXISTS transactions_view;
 # MAGIC create temporary view transactions_view as
 # MAGIC select 
 # MAGIC   transaction_id,
@@ -61,7 +62,7 @@
 # MAGIC   btc_amount,
 # MAGIC   transaction_date
 # MAGIC from bronze.transactions
-# MAGIC where transaction_date > '2025-01-29' and transaction_date < '2025-01-30'
+# MAGIC where transaction_date > '2025-06-24' and transaction_date < '2025-06-25';
 
 # COMMAND ----------
 
@@ -87,6 +88,7 @@
 # COMMAND ----------
 
 # MAGIC %sql
+# MAGIC DROP VIEW IF EXISTS bitcoin_price_view;
 # MAGIC create temporary view bitcoin_price_view as
 # MAGIC select 
 # MAGIC amount,
@@ -105,12 +107,3 @@
 
 # MAGIC %sql
 # MAGIC select * from silver.bitcoin_price
-
-# COMMAND ----------
-
-# MAGIC %sql
-# MAGIC drop table if exists silver.transactions
-
-# COMMAND ----------
-
-
