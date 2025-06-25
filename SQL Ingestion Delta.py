@@ -42,3 +42,7 @@ if new_transactions_df.count() > 0:
     print("Novos dados inseridos com sucesso!")
 else:
     print("Nenhum dado novo encontrado para inserção.")
+
+# COMMAND ----------
+
+

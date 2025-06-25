@@ -108,4 +108,9 @@
 
 # COMMAND ----------
 
+# MAGIC %sql
+# MAGIC drop table if exists silver.transactions
+
+# COMMAND ----------
+
 
